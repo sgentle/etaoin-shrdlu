@@ -13,7 +13,7 @@
   ]).then(function(arg) {
     var caps, currentletter, currentword, i, j, l, len, len1, letterdata, letters, name, next, ref, ref1, ref2, restart, text, w, word1, word2, worddata, words;
     letterdata = arg[0], worddata = arg[1];
-    letters = {};
+    letters = Object.create(null);
     ref = letterdata.split('\n');
     for (i = 0, len = ref.length; i < len; i++) {
       l = ref[i];
@@ -21,7 +21,7 @@
         (letters[name = l[0]] || (letters[name] = [])).push(l[1]);
       }
     }
-    words = {};
+    words = Object.create(null);
     ref1 = worddata.split('\n');
     for (j = 0, len1 = ref1.length; j < len1; j++) {
       w = ref1[j];

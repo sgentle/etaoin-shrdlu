@@ -5,12 +5,12 @@ Promise.all([
   fetch('word_bigrams.txt').then((x) -> x.text())
 ])
 .then ([letterdata, worddata]) ->
-  letters = {}
+  letters = Object.create(null)
   for l in letterdata.split('\n') when l
     (letters[l[0]] ||= []).push(l[1])
 
 
-  words = {}
+  words = Object.create(null)
   for w in worddata.split('\n') when w
     [word1, word2] = w.split('\t')
     (words[word1] ||= []).push(word2)
